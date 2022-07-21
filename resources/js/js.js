@@ -186,8 +186,6 @@
             });
 
             player.addEventListener('complete', function () {
-                console.log('--complete');
-
                 if ($this.onPlayComplete) {
                     $this.onPlayComplete();
                     $this.onPlayComplete = null;
@@ -210,8 +208,6 @@
 
 
         playIn() {
-            console.log('--playIn-' + this.path);
-
             let $this = this;
 
             if ($this.path == null) return;
@@ -219,8 +215,6 @@
             switch ($this.path) {
                 case 'qr':
                     $this.onPlayLoaded = function () {
-                        console.log('--onPlayLoaded-qr');
-
                         $this.getLottiePlayer().loaded = true;
 
                         $this.playSegment(0, 114);
@@ -233,8 +227,6 @@
 
                 case 'scan':
                     $this.onPlayLoaded = function () {
-                        console.log('--onPlayLoaded-scan');
-
                         $this.getLottiePlayer().loaded = true;
 
                         $this.playSegment(0, 100);
@@ -247,8 +239,6 @@
 
                 case 'scanned':
                     $this.onPlayLoaded = function () {
-                        console.log('--onPlayLoaded-scanned');
-
                         $this.getLottiePlayer().loaded = true;
 
                         $this.playSegment(0, 100);
@@ -257,8 +247,6 @@
 
                 case 'attach':
                     $this.onPlayLoaded = function () {
-                        console.log('--onPlayLoaded-attach');
-
                         $this.getLottiePlayer().loaded = true;
 
                         $this.playSegment(0, 30);
@@ -271,8 +259,6 @@
 
                 case 'pay-error':
                     $this.onPlayLoaded = function () {
-                        console.log('--onPlayLoaded-pay-error');
-
                         $this.getLottiePlayer().loaded = true;
 
                         $this.playSegment(0, 40);
@@ -285,8 +271,6 @@
 
                 case 'pay-complete':
                     $this.onPlayLoaded = function () {
-                        console.log('--onPlayLoaded-pay-complete');
-
                         $this.getLottiePlayer().loaded = true;
 
                         $this.playSegment(0, 64);
@@ -299,8 +283,6 @@
 
                 case 'not-work':
                     $this.onPlayLoaded = function () {
-                        console.log('--onPlayLoaded-pay-not-work');
-
                         $this.getLottiePlayer().loaded = true;
 
                         $this.playSegment(0, 40);
@@ -316,8 +298,6 @@
 
 
         playOut() {
-            console.log('--playOut-' + this.path);
-
             let $this = this;
 
             if ($this.path == null) return;
@@ -368,8 +348,6 @@
             player.goToAndPlay(from, true);
 
             $this.frameInterval = setInterval(function () {
-                // console.log(player.currentFrame);
-
                 if (loop) {
                     if (player.currentFrame < from) {
                         player.setDirection(1);
